@@ -17,6 +17,10 @@ layout: home
 
 		
         </ul>
+		
+		<div class="container" id="cc">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;模板来自<a href="http://beiyuu.com/">BeiYuu</a>博客 Rebuild by richardhmm @ 2014.</p>
+		</div>
 
     </div>
     <div class="aside">
