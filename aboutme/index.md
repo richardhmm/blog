@@ -14,11 +14,13 @@ layout: home
 
         <ul class="artical-list">
 
-		## richardhmm
-		
-		O(∩_∩)O~
-		我是谁
-		
+		<li>richardhmm 84年男 已婚</li>
+		<li>嵌入式码农一枚，崇尚开源分享之自由精神</li>
+		<li>喜欢飞一般的感觉，业余玩玩小四轴、动作DIY家居小设备</li>
+		<li>专注linux内核和Android系统开发</li>
+        <li><a href="http://blog.csdn.net/share_happy_1984">我的CSDN博客</a></li>
+        <li><a href="http://www.cnblogs.com/IDoIUnderstand">我的博客园博客</a></li>
+
         </ul>
 		<div class="container" id="cc">
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;模板来自<a href="http://beiyuu.com/">BeiYuu</a>博客 Rebuild by richardhmm @ 2014.</p>
