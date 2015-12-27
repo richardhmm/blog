@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "关于：About"
+title: "关于"
 ---
 
 ### 个人简介
