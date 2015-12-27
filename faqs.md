@@ -6,11 +6,14 @@ title: "问答：Faqs"
 
 ### Linux
 * **内网linux获取出口公网IP**
+
     $ curl http://members.3322.org/dyndns/getip
 
 * **内网linux获取出口公网IP** 
+
     $ wget http://members.3322.org/dyndns/getip 
     $ cat getip
-    
+
 * **查看当前文件夹大小** 
+
     $ du -skh
