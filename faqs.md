@@ -9,8 +9,6 @@ title: "备忘"
 
 	$ curl http://members.3322.org/dyndns/getip
 
-* **内网linux获取出口公网IP** 
-
     $ wget http://members.3322.org/dyndns/getip 
     $ cat getip
 
