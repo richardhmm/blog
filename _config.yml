@@ -1,11 +1,23 @@
-auto: true
-
-markdown: rdiscount
+markdown: redcarpet
+permalink: /:categories/:title.html
+url: 
+lsi: false
 pygments: true
-paginate: 8
-permalink: /:title
+safe: true
+auto: false 
 
-title: blog
-url: http://richardhmm.github.io/blog/
-feed: /atom.xml
-author_info: <a href="http://richardhmm.github.io/blog/">richardhmm</a>
+paginate: 8
+paginate_path: "page:num"
+
+# presonal config
+title: HMM's blog
+description: HMM's blog, powered by Jekyll...
+author: richard.hmm
+
+seo: 
+  keyword: 
+  description: 
+config:
+  js_dir:
+  img_dir:
+  css_dir:
