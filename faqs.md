@@ -7,8 +7,8 @@ title: "备忘"
 ### Linux
 * **内网linux获取出口公网IP**
 
-	$ curl http://members.3322.org/dyndns/getip
-
+    $ curl http://members.3322.org/dyndns/getip
+    
     $ wget http://members.3322.org/dyndns/getip 
     $ cat getip
 
