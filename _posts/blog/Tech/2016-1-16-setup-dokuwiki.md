@@ -9,7 +9,7 @@ tags: [dokuwiki ubuntu]
 ###1. Dokuwiki介绍
 Dokuwiki是一个用PHP写成的小巧wiki程序，不需要数据库，简洁而容易上手，又拥有很不错的权限管理体制和许多插件。它可以作为个人和中小型组织的知识库，也可以用作个人博客。
 
-####核心特点
+####**核心特点**
 
 * **PHP语言写成** 
 * **纯文本存储，不需要数据库** 
@@ -17,7 +17,7 @@ Dokuwiki是一个用PHP写成的小巧wiki程序，不需要数据库，简洁�
 
     注意：有些介绍中说Dokuwiki对文章标题的中文化支持不好，这个问题在现在的版本中已经不存在了。
 
-####其他特点
+####**其他特点**
 
 Dokuwiki是一个简洁小型的wiki程序，如果你用过Mediawiki可能会觉得它缺少某些功能，不过这些“缺少的功能”大都可以通过插件实现。
 
@@ -55,20 +55,24 @@ Dokuwiki是一个简洁小型的wiki程序，如果你用过Mediawiki可能会�
 官方要求是data   conf   bin   inc, 这四个目录是不能通过web访问浏览的。所以，我们要设置这些目录的权限，保证网站的数据安全。
 sudo vi /etc/apache2/sites-available/default
 将
-<Directory /var/www/>
+
+    <Directory /var/www/>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride none
                 Order allow,deny
                 allow from all
-</Directory>
+    </Directory>
+
 改为
-<Directory /var/www/>
+
+    <Directory /var/www/>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride all
                 Order allow,deny
                 allow from all
-</Directory>
-sudo service apache2 restart
+    </Directory>
+
+    sudo service apache2 restart
 
 ###参考
 * <a href="https://www.lainme.com/doku.php/blog/2010/04/dokuwiki%E4%BB%8B%E7%BB%8D">Dokuwiki介绍</a>
