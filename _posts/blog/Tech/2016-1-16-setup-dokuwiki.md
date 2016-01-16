@@ -72,6 +72,8 @@ sudo vi /etc/apache2/sites-available/default
                 allow from all
     </Directory>
 
+apache2重启
+
     sudo service apache2 restart
 
 ###参考
