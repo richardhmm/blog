@@ -51,7 +51,7 @@ Dokuwiki是一个简洁小型的wiki程序，如果你用过Mediawiki可能会�
 * 安装完后，为了安全，要删除install.php文件，然后再用刚才设置的用户名密码登陆
 
 ###6. 安全配置
-    访问http://127.0.0.1/dokuwiki/data/pages/wiki/dokuwiki.txt, 如果你能通过上面这个链接，访问到dokuwiki.txt文件，那么表明你的网站的数据是不安全，因为dokuwiki是文本数据库，也就是别人可以直接拖库了。
+访问http://127.0.0.1/dokuwiki/data/pages/wiki/dokuwiki.txt, 如果你能通过上面这个链接，访问到dokuwiki.txt文件，那么表明你的网站的数据是不安全，因为dokuwiki是文本数据库，也就是别人可以直接拖库了。
 官方要求是data   conf   bin   inc, 这四个目录是不能通过web访问浏览的。所以，我们要设置这些目录的权限，保证网站的数据安全。
 
     $ sudo vi /etc/apache2/sites-available/default
