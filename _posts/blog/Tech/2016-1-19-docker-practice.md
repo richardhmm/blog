@@ -15,13 +15,14 @@ docker小白, 此处不废话, 更多信息参考如下链接.
 
 #### 2.1 默认安装过程(64bit)
 **通过Docker源安装最新版本**
+
 要安装最新的 Docker 版本，首先需要安装 apt-transport-https 支持，之后通过添加源来安装。
 
-$ sudo apt-get install apt-transport-https
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-$ sudo bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
-$ sudo apt-get update
-$ sudo apt-get install lxc-docker
+    $ sudo apt-get install apt-transport-https
+    $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+    $ sudo bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+    $ sudo apt-get update
+    $ sudo apt-get install lxc-docker
 
 
 注：有个简单脚本可以用于这个过程
@@ -36,7 +37,8 @@ $ sudo docker run -i -t ubuntu /bin/bash
 #### 2.2 ubuntu 14.04 i386 32bit安装
 无奈本人机器装的是32bit ubuntu系统, 上述2.1安装失败.
 
-##### 32bit ubuntu安装Docker
+**32bit ubuntu安装Docker**
+
 Run build-image.sh to build the docker image 32bit/ubuntu:14.04, or build-image.sh precise to build the docker image 32bit/ubuntu:precise.
 
 <a href="https://github.com/docker-32bit/ubuntu">Build a docker image for ubuntu i386</a>
