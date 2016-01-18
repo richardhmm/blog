@@ -39,7 +39,15 @@ title: "备忘"
     
     $ pidof nginx|xargs kill
     
+* **8. 查看linux版本**
 
+    $ cat /proc/version
+    
+    $ uname -a
+
+    $ uname -r
+    
+    $ cat /etc/os-release
 
 
 
