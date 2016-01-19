@@ -144,6 +144,88 @@ See also: http://mwhiteley.com/linux-containers/2013/08/31/docker-on-i386.html
     SUPPORT_URL="http://help.ubuntu.com/"
     BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/" 
 
+###3. Docker OpenWRT 15.05 Image
+导入OpenWRT 15.05 Image: 
+
+    #docker import http://downloads.openwrt.org/chaos_calmer/15.05/x86/generic/openwrt-15.05-x86-generic-Generic-rootfs.tar.gz  openwrt-x86-generic-rootfs
+    Downloading from http://downloads.openwrt.org/chaos_calmer/15.05/x86/generic/openwrt-15.05-x86-generic-Generic-rootfs.tar.gz
+    Importing 2.272 MB/2.272 MB
+    ee4136038b675906eab4f21d672bd71d9261b10509d3c5e42558d3a73468d2aa
+    # docker images
+    REPOSITORY                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    openwrt-x86-generic-rootfs         latest              ee4136038b67        27 seconds ago      5.2 MB
+
+运行一个简单cat命令:
+
+    # docker run -i openwrt-x86-generic-rootfs cat /etc/banner
+      _______                     ________        __
+     |       |.-----.-----.-----.|  |  |  |.----.|  |_
+     |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+     |_______||   __|_____|__|__||________||__|  |____|
+              |__| W I R E L E S S   F R E E D O M
+     -----------------------------------------------------
+     CHAOS CALMER (15.05, r46767)
+     -----------------------------------------------------
+      * 1 1/2 oz Gin            Shake with a glassful
+      * 1/4 oz Triple Sec       of broken ice and pour
+      * 3/4 oz Lime Juice       unstrained into a goblet.
+      * 1 1/2 oz Orange Juice
+      * 1 tsp. Grenadine Syrup
+     -----------------------------------------------------
+    #
+
+运行一个基础命令ifconfig:
+
+    # docker run -i openwrt-x86-generic-rootfs ifconfig
+    eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:02  
+          inet addr:172.17.0.2  Bcast:0.0.0.0  Mask:255.255.0.0
+          inet6 addr: fe80::42:acff:fe11:2/64 Scope:Link
+          UP BROADCAST  MTU:1500  Metric:1
+          RX packets:1 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:90 (90.0 B)  TX bytes:90 (90.0 B)
+
+    lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+运行在交互shell中:
+
+    # docker run -i -t openwrt-x86-generic-rootfs /bin/ash
+
+
+    BusyBox v1.23.2 (2015-07-25 07:32:21 CEST) built-in shell (ash)
+
+    / # ps
+  PID USER       VSZ STAT COMMAND
+    1 root      1068 S    /bin/ash
+    8 root      1068 R    ps
+    / # ifconfig 
+    eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:04  
+          inet addr:172.17.0.4  Bcast:0.0.0.0  Mask:255.255.0.0
+          inet6 addr: fe80::42:acff:fe11:4/64 Scope:Link
+          UP BROADCAST RUNNING  MTU:1500  Metric:1
+          RX packets:6 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:508 (508.0 B)  TX bytes:508 (508.0 B)
+
+    lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+    / #
 
 ###参考
 * <a href="http://dockerpool.com/static/books/docker_practice/">Docker —— 从入门到实践</a>
