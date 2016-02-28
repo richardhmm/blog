@@ -6,7 +6,7 @@ description: 本文介绍了在banana pi(BPI-M1) openwrt系统的编译过程
 tags: [banana pi BPI-M1 openwrt 编译]
 ---
 
-#####1. banana pi简介#####
+### 1. banana pi简介  ###
   朋友搞过开源硬件, 送我一块banana pi BPI-M1. 笔者对openwrt系统很感兴趣, 且这个单板机功能蛮强大的, 可以刷openwrt, 性能比一般的路由器强大不少, 尝试了官方的openwrt版本, 感觉不错, 想尝试自己定制下openwrt系统增加更多的功能. 
 
   另外有人拿banana pi Archlinux系统中安装了docker, 感觉相当不错, 后续有时间也想玩玩.
@@ -15,7 +15,7 @@ tags: [banana pi BPI-M1 openwrt 编译]
 
 <a href="http://www.finklabs.org/articles/using-docker-on-banana-pi.html">Using Docker on Banana Pi</a>
 
-#####2. BPI-M1 openwrt系统的编译#####
+### 2. BPI-M1 openwrt系统的编译 ###
 
 #### 2.1 编译环境####
 ubuntu14.04 32bit
