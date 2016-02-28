@@ -24,7 +24,7 @@ ubuntu14.04 32bit
 
 #### 2.3 获取源码 ####
 
-~~~ c
+~~~ ruby
 git clone https://github.com/BPI-SINOVOIP/BPI-OpenWRT.git
 cd BPI-OpenWRT
 ./scripts/feeds update -a # 更新软件包
