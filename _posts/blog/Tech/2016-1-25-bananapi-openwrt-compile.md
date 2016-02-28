@@ -25,10 +25,10 @@ ubuntu14.04 32bit
 #### 2.3 获取源码 ####
 
 ~~~ c
-    git clone https://github.com/BPI-SINOVOIP/BPI-OpenWRT.git
-    cd BPI-OpenWRT
-    ./scripts/feeds update -a # 更新软件包
-    ./scripts/feeds install -a    # 安装软件包
+git clone https://github.com/BPI-SINOVOIP/BPI-OpenWRT.git
+cd BPI-OpenWRT
+./scripts/feeds update -a # 更新软件包
+./scripts/feeds install -a    # 安装软件包
 ~~~
 
 #### 2.4 定制 ####
