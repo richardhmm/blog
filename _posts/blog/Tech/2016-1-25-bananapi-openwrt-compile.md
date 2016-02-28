@@ -43,7 +43,7 @@ ubuntu14.04 32bit
 
 
 
-### 参考 ###
+### 参考  ###
 * <a href="http://www.lichanglin.cn/Bananapi%E7%B3%BB%E5%88%97%20openwrt%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91%E6%95%99%E7%A8%8B/">Bananapi系列 openwrt系统编译教程</a>
 * <a href="http://www.lizhaozhong.info/archives/1230">从0构建一个基于BananaPi的OpenWrt系统</a>
 * <a href="http://www.finklabs.org/articles/using-docker-on-banana-pi.html">Using Docker on Banana Pi</a>
