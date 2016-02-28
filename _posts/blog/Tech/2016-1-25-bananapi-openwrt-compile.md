@@ -24,26 +24,26 @@ ubuntu14.04 32bit
 
     apt-get install subversion build-essential libncurses5-dev zlib1g-dev gawk git ccache gettext libssl-dev xsltproc unzip subversion file
 
-#### 2.3 获取源码####
+#### 2.3 获取源码 ####
 
     git clone https://github.com/BPI-SINOVOIP/BPI-OpenWRT.git
     cd BPI-OpenWRT
     ./scripts/feeds update -a # 更新软件包
     ./scripts/feeds install -a    # 安装软件包
 
-#### 2.4 定制####
+#### 2.4 定制 ####
 
     make menuconfig
     
 
-#### 2.5 编译####
+#### 2.5 编译 ####
 
     make V=99
     
 
 
 
-###参考###
+### 参考 ###
 * <a href="http://www.lichanglin.cn/Bananapi%E7%B3%BB%E5%88%97%20openwrt%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91%E6%95%99%E7%A8%8B/">Bananapi系列 openwrt系统编译教程</a>
 * <a href="http://www.lizhaozhong.info/archives/1230">从0构建一个基于BananaPi的OpenWrt系统</a>
 * <a href="http://www.finklabs.org/articles/using-docker-on-banana-pi.html">Using Docker on Banana Pi</a>

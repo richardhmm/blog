@@ -6,14 +6,14 @@ description: 本文介绍了一个docker小白在ubuntu 14.04下进行docker安�
 tags: [docker ubuntu]
 ---
 
-###1. docker简介
+### 1. docker简介 ###
 docker小白, 此处不废话, 更多信息参考如下链接.
 
 <a href="http://dockerpool.com/static/books/docker_practice/introduction/what.html">什么是 Docker</a>
 
-###2. docker安装
+### 2. docker安装 ###
 
-#### 2.1 默认安装过程(64bit)
+#### 2.1 默认安装过程(64bit) ####
 **通过Docker源安装最新版本**
 
 要安装最新的 Docker 版本，首先需要安装 apt-transport-https 支持，之后通过添加源来安装。
@@ -34,7 +34,7 @@ docker小白, 此处不废话, 更多信息参考如下链接.
     $ sudo docker run -i -t ubuntu /bin/bash
 
 
-#### 2.2 ubuntu 14.04 i386 32bit安装
+#### 2.2 ubuntu 14.04 i386 32bit安装 ####
 无奈本人机器装的是32bit ubuntu系统, 上述2.1安装失败.
 
 **32bit ubuntu安装Docker**
@@ -137,14 +137,14 @@ See also: http://mwhiteley.com/linux-containers/2013/08/31/docker-on-i386.html
     NAME="Ubuntu"
     VERSION="14.04, Trusty Tahr"
     ID=ubuntu
-    ID_LIKE=debian
+    ID_LIKE=debian###
     PRETTY_NAME="Ubuntu 14.04 LTS"
     VERSION_ID="14.04"
     HOME_URL="http://www.ubuntu.com/"
     SUPPORT_URL="http://help.ubuntu.com/"
     BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/" 
 
-###3. Docker OpenWRT 15.05 Image
+### 3. Docker OpenWRT 15.05 Image ###
 导入OpenWRT 15.05 Image: 
 
     #docker import http://downloads.openwrt.org/chaos_calmer/15.05/x86/generic/openwrt-15.05-x86-generic-Generic-rootfs.tar.gz  openwrt-x86-generic-rootfs
@@ -227,7 +227,7 @@ See also: http://mwhiteley.com/linux-containers/2013/08/31/docker-on-i386.html
 	
 	    / #
 
-###参考
+### 参考 ###
 * <a href="http://dockerpool.com/static/books/docker_practice/">Docker —— 从入门到实践</a>
 * <a href="http://openwrt.io/docs/build-openwrt-package-using-docker/">使用Docker编译OpenWrt Package</a>
 * <a href="http://www.520608.com/ji-yu-dockerbian-yi-openwrt/">基于Docker编译openwrt</a>

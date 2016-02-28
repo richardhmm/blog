@@ -6,10 +6,10 @@ description: 本文介绍了ubuntu下进行小型开源wiki dokuwiki的搭建与
 tags: [dokuwiki ubuntu]
 ---
 
-###1. Dokuwiki介绍
+### 1. Dokuwiki介绍 ###
 Dokuwiki是一个用PHP写成的小巧wiki程序，不需要数据库，简洁而容易上手，又拥有很不错的权限管理体制和许多插件。它可以作为个人和中小型组织的知识库，也可以用作个人博客。
 
-####**核心特点**
+#### **核心特点** ####
 
 * **PHP语言写成** 
 * **纯文本存储，不需要数据库** 
@@ -17,7 +17,7 @@ Dokuwiki是一个用PHP写成的小巧wiki程序，不需要数据库，简洁�
 
     注意：有些介绍中说Dokuwiki对文章标题的中文化支持不好，这个问题在现在的版本中已经不存在了。
 
-####**其他特点**
+#### **其他特点** ####
 
 Dokuwiki是一个简洁小型的wiki程序，如果你用过Mediawiki可能会觉得它缺少某些功能，不过这些“缺少的功能”大都可以通过插件实现。
 
@@ -29,28 +29,28 @@ Dokuwiki是一个简洁小型的wiki程序，如果你用过Mediawiki可能会�
 * **搜索：可以全文搜索** 
 * **缓存：内置的页面缓存** 
 
-###2. 安装apache2、php5
+### 2. 安装apache2、php5 ###
 
     $ sudo apt-get install apache2 php5
 
-###3. 下载dokuwiki
+### 3. 下载dokuwiki ###
 
     $ cd /var/www/html/
     $ wget -c  http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
     $ tar -xvf dokuwiki-stable.tgz    //解压缩并改名为dokuwiki
     
-###4. 设置权限
+### 4. 设置权限 ###
 
     $ cd dokuwiki
     $ sudo chown -R www-data:www-data data conf // www-data为apache2安装时自动创建的用户
 
-###5. 安装
+### 5. 安装 ###
 * 在浏览器输入：http://127.0.0.1/dokuwiki/install.php
 * 先在右上角选好语言，简体中文zh
 * 填写好网站的名称，管理员等，协议等
 * 安装完后，为了安全，要删除install.php文件，然后再用刚才设置的用户名密码登陆
 
-###6. 安全配置
+### 6. 安全配置 ###
  访问http://127.0.0.1/dokuwiki/data/pages/wiki/dokuwiki.txt, 如果你能通过上面这个链接，访问到dokuwiki.txt文件，那么表明你的网站的数据是不安全，因为dokuwiki是文本数据库，也就是别人可以直接拖库了。
 
  官方要求是data   conf   bin   inc, 这四个目录是不能通过web访问浏览的。所以，我们要设置这些目录的权限，保证网站的数据安全。
@@ -79,17 +79,17 @@ apache2重启
 
     $ sudo service apache2 restart
 
-###7. 增加页面模板
+### 7. 增加页面模板 ###
 * 下载一个模板, 比如:<a href="http://phylab.fudan.edu.cn/lib/exe/fetch.php?media=activity:training:2014:default.rar">复旦使用的dokuwiki模板</a>
 * 解压后放入wiki网站/lib/tpl目录下, 登录管理员账户-->管理-->配置设置-->模板-->dokuwiki, 将dokuwiki改为default, 然后保存再刷新页面即可.
 
 <a href="www.dokuwiki.org/template:vector">vector主题</a>, 仿维基百科主题, 强力推荐使用.
 
-###8. 增加插件
+### 8. 增加插件 ###
 * 下载一个插件, <a href="https://www.dokuwiki.org/plugins">官方插件库</a>
 * 解压后放入wiki网站/lib/plugins目录, 登录管理员账户-->管理-->配置设置, 然后进行设置即可.
 
-###参考
+### 参考 ###
 * <a href="https://www.lainme.com/doku.php/blog/2010/04/dokuwiki%E4%BB%8B%E7%BB%8D">Dokuwiki介绍</a>
 * <a href="http://www.dabu.info/dokuwiki-installation-and-configuration.html">dokuwiki安装与配置教程</a>
 * <a href="http://phylab.fudan.edu.cn/doku.php?id=howtos:wiki_start0">从零开始学习wiki建站</a>
