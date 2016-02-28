@@ -10,8 +10,6 @@ tags: [banana pi BPI-M1 openwrt 编译]
   朋友搞过开源硬件, 送我一块banana pi BPI-M1. 笔者对openwrt系统很感兴趣, 且这个单板机功能蛮强大的, 可以刷openwrt, 性能比一般的路由器强大不少, 尝试了官方的openwrt版本, 感觉不错, 想尝试自己定制下openwrt系统增加更多的功能. 
 
   另外有人拿banana pi Archlinux系统中安装了docker, 感觉相当不错, 后续有时间也想玩玩.
-    
-<a href="http://dockerpool.com/static/books/docker_practice/introduction/what.html">什么是 Docker</a>
 
 <a href="http://www.finklabs.org/articles/using-docker-on-banana-pi.html">Using Docker on Banana Pi</a>
 
@@ -26,10 +24,12 @@ ubuntu14.04 32bit
 
 #### 2.3 获取源码 ####
 
+    ~~~
     git clone https://github.com/BPI-SINOVOIP/BPI-OpenWRT.git
     cd BPI-OpenWRT
     ./scripts/feeds update -a # 更新软件包
     ./scripts/feeds install -a    # 安装软件包
+    ~~~
 
 #### 2.4 定制 ####
 
