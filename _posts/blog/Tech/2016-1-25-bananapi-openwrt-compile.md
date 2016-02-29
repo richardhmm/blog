@@ -63,6 +63,7 @@ LuCI—>5. Protocols  ---> <*> luci-proto-3g # 支持3g上网功能模块
     
 #### 2.6 烧写固件 ####
 编译完成后会在bin/sunxi/中生固件，文件名为：openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img, 在ubuntu上使用dd命令将该文件烧写到SD卡中.
+
 ~~~
 ./BPI-OpenWRT/bin/sunxi# dd bs=4M if=openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img of=/dev/sdb
 记录了17+1 的读入
@@ -89,6 +90,7 @@ none            100M   84K  100M    1% /run/user
 
 #### 2.7 系统启动 ####
 插上SD卡, 上电启动, 启动成功后, 从串口获取的一些信息, 如下:
+
 ~~~
 root@BananaPi:/# cat /etc/openwrt_version 
 15.05-rc3
