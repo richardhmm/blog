@@ -61,8 +61,102 @@ LuCI—>5. Protocols  ---> <*> luci-proto-3g # 支持3g上网功能模块
 
     make V=99
     
+#### 2.6 烧写固件 ####
+编译完成后会在bin/sunxi/中生固件，文件名为：openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img, 在ubuntu上使用dd命令将该文件烧写到SD卡中.
+~~~
+./BPI-OpenWRT/bin/sunxi# dd bs=4M if=openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img of=/dev/sdb
+记录了17+1 的读入
+记录了17+1 的写出
+73400320字节(73 MB)已复制，5.99279 秒，12.2 MB/秒
+./BPI-OpenWRT/bin/sunxi# ls /dev/sdb*
+/dev/sdb  /dev/sdb1  /dev/sdb2
+./BPI-OpenWRT/bin/sunxi# df -h
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/sda9        19G   13G  5.2G   71% /
+none            4.0K     0  4.0K    0% /sys/fs/cgroup
+udev            999M  4.0K  999M    1% /dev
+tmpfs           202M  1.2M  201M    1% /run
+none            5.0M     0  5.0M    0% /run/lock
+none           1008M  8.0K 1008M    1% /run/shm
+none            100M   84K  100M    1% /run/user
+/dev/sda11      180M   62M  106M   37% /boot
+/dev/sda12       19G   15G  3.0G   84% /home
+/dev/sda8        48G   43G  2.7G   95% /home/data
+/dev/sdb2        47M   11M   36M   23% /media/root/57f8f4bc-abf4-655f-bf67-946fc0f9f25b
+/dev/sdb1        20M  1.9M   19M   10% /media/root/DD37-4A39
+./BPI-OpenWRT/bin/sunxi# 
+~~~
 
+#### 2.7 系统启动 ####
+插上SD卡, 上电启动, 启动成功后, 从串口获取的一些信息, 如下:
+~~~
+root@BananaPi:/# cat /etc/openwrt_version 
+15.05-rc3
+root@BananaPi:/# cat /etc/openwrt_release 
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='Chaos Calmer'
+DISTRIB_REVISION='unknown'
+DISTRIB_CODENAME='chaos_calmer'
+DISTRIB_TARGET='sunxi/generic'
+DISTRIB_DESCRIPTION='OpenWrt Chaos Calmer 15.05-rc3'
+DISTRIB_TAINTS='no-all'
+root@BananaPi:/# cat /proc/version 
+Linux version 3.18.19 (root@xxx-desktop) (gcc version 4.8.3 (OpenWrt/Linaro GCC 4.8-2014.04 unknown) ) #1 SMP PREEMPT Mon Feb 29 01:26:08 CST 2016
+root@BananaPi:/# df -h
+Filesystem                Size      Used Available Use% Mounted on
+rootfs                   46.5M     10.0M     35.5M  22% /
+/dev/root                46.5M     10.0M     35.5M  22% /
+tmpfs                   500.8M    212.0K    500.6M   0% /tmp
+tmpfs                   512.0K         0    512.0K   0% /dev
+root@BananaPi:/# ifconfig 
+eth0      Link encap:Ethernet  HWaddr 02:88:07:C1:62:AA  
+          inet6 addr: fe80::88:7ff:fec1:62aa/64 Scope:Link
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:1247 (1.2 KiB)
+          Interrupt:117 
 
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:104 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:104 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:7824 (7.6 KiB)  TX bytes:7824 (7.6 KiB)
+
+root@BananaPi:/# cat /etc/config/network                                        
+                                                                                
+config interface 'loopback'                                                     
+        option ifname 'lo'                                                      
+        option proto 'static'                                                   
+        option ipaddr '127.0.0.1'                                               
+        option netmask '255.0.0.0'                                              
+                                                                                
+config globals 'globals'                                                        
+        option ula_prefix 'fd30:8bf1:b154::/48'                                 
+                                                                                
+config interface 'wan'                                                          
+        option ifname 'eth0'                                                    
+        option proto 'dhcp'                                                     
+                                                                                
+config interface 'wan6'                                                         
+        option ifname 'eth0'                                                    
+        option proto 'dhcpv6'                                                   
+                                                                                
+config interface 'lan'                                                          
+        option ifname 'eth1'                                                    
+        option force_link '1'                                                   
+        option type 'bridge'                                                    
+        option proto 'static'                                                   
+        option ipaddr '192.168.1.1'                                             
+        option netmask '255.255.255.0'                                          
+        option ip6assign '60'                                                   
+                                                                                
+root@BananaPi:/# 
+~~~
 
 ### 参考  ###
 * <a href="http://www.lichanglin.cn/Bananapi%E7%B3%BB%E5%88%97%20openwrt%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91%E6%95%99%E7%A8%8B/">Bananapi系列 openwrt系统编译教程</a>
