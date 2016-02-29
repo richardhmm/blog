@@ -62,19 +62,19 @@ config globals 'globals'
         option ula_prefix 'fd30:8bf1:b154::/48'                                 
                                                                                 
 config interface 'wan'                                                          
-        option ifname 'usb0'       # usb0 后面要用                                             
+        option ifname 'usb0'       # usb0 后面要用
         option proto 'dhcp'                                                     
                                                                                 
 config interface 'wan6'                                                         
-        option ifname 'usb0'            # usb0 后面要用                                                
+        option ifname 'usb0'            # usb0 后面要用
         option proto 'dhcpv6'                                                   
                                                                                 
 config interface 'lan'                                                          
-        option ifname 'eth0'            # eth1改为eth0                                               
+        option ifname 'eth0'            # eth1改为eth0 
         option force_link '1'                                                   
         option type 'bridge'                                                    
         option proto 'static'                                                   
-        option ipaddr '192.168.42.11'        # 改为与家中网络同处于一个网段, 方便PC直接访问                                   
+        option ipaddr '192.168.42.11'        # 改为与家中网络同处于一个网段, 方便PC直接访问
         option netmask '255.255.255.0'                                          
         option ip6assign '60'                                                   
                                                                                 
@@ -121,13 +121,14 @@ root@BananaPi:/etc/config#
 ~~~
 
 #### 2.4 web正常访问openwrt ####
-第一次登录后界面
+**1. 第一次登录后界面**
 ![第一次登录后界面](/blog/images/bananapi/openwrt_login.png)
 
-输入用户名和密码后root/admin
+**2. 输入用户名和密码后root/admin**
 ![输入用户名和密码](/blog/images/bananapi/openwrt_status.png)
 
-将系统默认语言改为普通话后
+**3. 将系统默认语言改为普通话后**
+
 ![默认语言改为普通话](/blog/images/bananapi/openwrt_language.png)
 
 ### 参考  ###
