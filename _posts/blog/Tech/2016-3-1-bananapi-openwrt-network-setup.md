@@ -121,14 +121,7 @@ root@BananaPi:/etc/config#
 ~~~
 
 #### 2.4 web正常访问openwrt ####
-第一次登录后界面
-![第一次登录后界面](/blog/images/bananapi/openwrt_login.png)
 
-输入用户名和密码后root/admin
-![输入用户名和密码](/blog/images/bananapi/openwrt_status.png)
-
-将系统默认语言改为普通话后
-![默认语言改为普通话](/blog/images/bananapi/openwrt_language.png)
 
 ### 参考  ###
 * <a href="http://www.finklabs.org/articles/using-docker-on-banana-pi.html">Using Docker on Banana Pi</a>
