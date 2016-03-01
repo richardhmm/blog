@@ -8,6 +8,7 @@ tags: [banana pi BPI-M1 openwrt 路由器 定制]
 
 ### 1. 定制路由器原理介绍  ###
 **定制目标如下图**
+
 ![原理框图](/blog/images/bananapi/BPI_router.png)
 
 ### 2. 定制过程 ###
@@ -15,6 +16,7 @@ tags: [banana pi BPI-M1 openwrt 路由器 定制]
 #### 2.1 增加USB RNDIS实现共享安卓手机上网 ####
 
 1. 版本编译配置
+
 ~~~
 make menuconfig
 
@@ -30,6 +32,7 @@ make V=99
 ~~~
 
 2. 网络配置使能USB RNDIS共享上网
+
 ~~~
 root@BananaPi:/# cat /etc/config/network                                        
                                                                                 
