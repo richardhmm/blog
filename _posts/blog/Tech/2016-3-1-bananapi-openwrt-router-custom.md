@@ -15,7 +15,7 @@ tags: [banana pi BPI-M1 openwrt 路由器 定制]
 
 #### 2.1 增加USB RNDIS实现共享安卓手机上网 ####
 
-1. 版本编译配置
+**首先, 版本编译配置**
 
 ~~~
 make menuconfig
@@ -31,7 +31,7 @@ Base system  ---> <*> udev
 make V=99
 ~~~
 
-2. 网络配置使能USB RNDIS共享上网
+**其次, 进行网络配置使能USB RNDIS共享上网**
 
 ~~~
 root@BananaPi:/# cat /etc/config/network                                        
@@ -149,6 +149,34 @@ root@BananaPi:/#
 ~~~
 
 #### 2.2 增加USB WIFI AP ####
+笔者手上有一个TP-LINK TL-WN823N 1.0的usb wifi网卡, 直接插到系统中, 不能正常识别为USB WIFI, 打印如下:
+
+~~~
+[ 1850.481766] usb 1-1: USB disconnect, device number 2        
+[ 1956.593682] usb 1-1: new high-speed USB device number 3 using ehci-platform  
+[ 1956.745456] usb 1-1: New USB device found, idVendor=0bda, idProduct=8178     
+[ 1956.752164] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 1956.759333] usb 1-1: Product: USB WLAN                                       
+[ 1956.763091] usb 1-1: Manufacturer: 802.11n                                   
+[ 1956.767217] usb 1-1: SerialNumber: 00e04c000001 
+~~~
+
+首先, 需要增加USB WIFI驱动和hostapd工具软件.
+
+~~~
+make menuconfig
+
+# 配置
+Kernel modules  ---> -*- kmod-cfg80211
+Kernel modules  ---> <*> kmod-lib80211
+Kernel modules  ---> <*> kmod-mac80211
+Kernel modules  ---> <*> kmod-net-rtl8188eu
+Kernel modules  ---> <*> kmod-net-rtl8192su
+
+Network  ---> <*> hostapd
+Network  ---> -*- hostapd-common
+Network  ---> <*> hostapd-utils
+~~~
 
 ### 参考  ###
 * <a href="http://blog.csdn.net/whfyzg/article/details/47125273">openwrt 使用 android 手机usb tether联网 </a>
