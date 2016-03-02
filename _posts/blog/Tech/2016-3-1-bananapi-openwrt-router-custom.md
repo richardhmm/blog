@@ -460,12 +460,11 @@ root@BananaPi:/#
 
 **固件分享, 送给有需要的朋友**
 
+~~~
 版本: v1.0.1
-
 固件: openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img-v1.0.1
-
 链接: http://pan.baidu.com/s/1hra7CQo 密码: 5j23
-
+~~~
 
 ### 参考  ###
 * <a href="http://blog.csdn.net/whfyzg/article/details/47125273">openwrt 使用 android 手机usb tether联网 </a>
