@@ -316,7 +316,6 @@ root@BananaPi:/#
 
 # 配置/etc/config/wireless使能wifi AP, 同时/etc/config/network按照2.1重新配置并重启网络服务.
 
-~~~
 root@BananaPi:/# cat /etc/config/wireless  # 已经使能wifi ap                                       
 config wifi-device  radio0                                                      
         option type     mac80211                                                
