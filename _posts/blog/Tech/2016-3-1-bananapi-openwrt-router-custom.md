@@ -6,7 +6,7 @@ description: 本文介绍了在banana pi(BPI-M1)定制为openwrt系统的路由�
 tags: [banana pi BPI-M1 openwrt 路由器 定制]
 ---
 
-### 1. 定制路由器原理介绍  ###
+### 1. 定制路由器目标介绍  ###
 **定制目标如下图**
 
 ![原理框图](/blog/images/bananapi/BPI_router.png)
@@ -315,7 +315,6 @@ config wifi-iface
 root@BananaPi:/#
 
 # 配置/etc/config/wireless使能wifi AP, 同时/etc/config/network按照2.1重新配置并重启网络服务.
-
 root@BananaPi:/# cat /etc/config/wireless  # 已经使能wifi ap                                       
 config wifi-device  radio0                                                      
         option type     mac80211                                                
