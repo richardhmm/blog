@@ -459,8 +459,11 @@ root@BananaPi:/#
 
 
 **固件分享, 送给有需要的朋友**
+
 版本: v1.0.1
+
 固件: openwrt-sunxi-BPI-M1-sdcard-vfat-ext4.img-v1.0.1
+
 链接: http://pan.baidu.com/s/1hra7CQo 密码: 5j23
 
 
