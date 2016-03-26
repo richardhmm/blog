@@ -14,9 +14,13 @@ tags: [banana pi BPI-M1 openwrt lighttpd+php dokuwiki]
 #### 2.1 搭建web服务器lighttpd ####
 
 #### 2.2 增加PHP服务 ####
+~~~
+
 Utilities  ---> database  ---> <*> mysql-server
 Utilities  ---> Filesystem  ---> <*> nfs-utils
 Utilities  ---> Filesystem  ---> <*> ntfs-3g
 Utilities  ---> disc  ---> <*> fdisk
+~~~
+
 ### 参考  ###
 * <a href="http://blog.csdn.net/whfyzg/article/details/47125273">openwrt 使用 android 手机usb tether联网 </a>

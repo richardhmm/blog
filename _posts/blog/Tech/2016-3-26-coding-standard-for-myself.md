@@ -14,31 +14,38 @@ tags: [编码规范 c lua linux]
 #### 2.1 文件和目录 ####
 文件和目录名称都使用camelCase命名风格。
 ~~~
+
 versionInfo.h  ### h文件
 versionInfo.c  ### c文件
 commProject  ### 目录
+
 ~~~
 
 #### 2.2 函数和变量 ####
 函数和变量名称都使用小写字母下划线命名风格。
 ~~~
+
 void get_version(void);
 bool is_man = TRUE;
+
 ~~~
 
 #### 2.3 宏和枚举定义 ####
 宏和枚举值的命名采用UPPER_CASE风格，即所有字母都大写，单词之间使用下划线分隔。
 ~~~
+
 #ifndef _TYPE_H_
 #define _TYPE_H_
 #endif /* _TYPE_H_ */
 
 #define MAX_BUFF 1024
+
 ~~~
 
 #### 2.4 注释 ####
 函数头和文件头推荐采用javadoc注释规范。
 ~~~
+
 /**
  * @file main.c
  * @brief main
@@ -51,6 +58,7 @@ bool is_man = TRUE;
  * @param[in] cmd_buff 命令指针。
  * @return 结果。
  */
+ 
 ~~~
 
 ### 参考  ###
