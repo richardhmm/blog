@@ -14,8 +14,8 @@ tags: [banana pi BPI-M1 openwrt lighttpd+php dokuwiki]
 #### 2.1 搭建web服务器lighttpd ####
 
 #### 2.2 增加PHP服务 ####
-~~~
 
+~~~
 Utilities  ---> database  ---> <*> mysql-server
 Utilities  ---> Filesystem  ---> <*> nfs-utils
 Utilities  ---> Filesystem  ---> <*> ntfs-3g
