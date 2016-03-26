@@ -21,7 +21,7 @@ commProject  ### 目录
 ~~~
 
 #### 2.2 函数和变量 ####
-函数和变量名称都使用小写字母下划线命名风格。
+函数和变量名称都使用lower_case命名风格。
 
 ~~~
 void get_version(void);
