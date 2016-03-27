@@ -15,39 +15,49 @@ title: "备忘"
 
 * **2. 查看当前文件夹大小** 
 
+~~~
     $ du -skh
-    
+~~~
+
 * **3. 删除空文件** 
 
+~~~
     $ find / -type f -size 0 -exec rm -rf {} \;
-    
+~~~
+
 * **4. 获取当前内网IP地址**
 
+~~~
     $ ifconfig |awk -F"[ ]+|[:]" 'NR==2 {print $4}'
-    
+~~~
+
 * **5. 以内存大小排序列出进程**
 
+~~~
     $ ps aux --sort=rss |sort -k 6 -rn
-    
+~~~
+
 * **6. 目录中大量文件删除**
 
+~~~
     $ ls | xargs rm
-    
+~~~
+
 * **7. 查找进程pid并kill**
 
+~~~
     $ pgrep nginx|xargs kill
-    
     $ pidof nginx|xargs kill
-    
+~~~
+
 * **8. 查看linux版本**
 
+~~~
     $ cat /proc/version
-    
     $ uname -a
-
     $ uname -r
-    
     $ cat /etc/os-release
+~~~
 
 
 
