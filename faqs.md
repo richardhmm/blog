@@ -7,11 +7,11 @@ title: "备忘"
 ### Linux
 * **1. 内网linux获取出口公网IP**
 
+~~~
     $ curl http://members.3322.org/dyndns/getip
-    
     $ wget http://members.3322.org/dyndns/getip 
-    
     $ cat getip
+~~~
 
 * **2. 查看当前文件夹大小** 
 
