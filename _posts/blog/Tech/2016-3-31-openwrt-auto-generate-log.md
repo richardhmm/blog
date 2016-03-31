@@ -33,29 +33,49 @@ exit 0
 #!/bin/sh
 # atuo Generate Log
 
-echo "====save system log====" >> /mnt/sda3/log/log.sys
-echo "====date:" >> /mnt/sda3/log/log.sys
-date >> /mnt/sda3/log/log.sys
-logread >> /mnt/sda3/log/log.sys
-logread -f >> /mnt/sda3/log/log.sys &
+mkdir -p /mnt/log
+LOG_SYS_FILE=/mnt/log/log.sys
+LOG_KERNEL_FILE=/mnt/log/log.kernel
+MAX_FILE_SIZE=10485760 # 10M
+TIME_SLEEP=3600 # 1h
 
-echo "====save kernel log====" >> /mnt/sda3/log/log.kernel
+echo "====save system log====" >> $LOG_SYS_FILE
+echo "====date:" >> $LOG_SYS_FILE
+date >> $LOG_SYS_FILE
+logread >> $LOG_SYS_FILE
+logread -f >> $LOG_SYS_FILE &
+
+echo "====save kernel log====" >> $LOG_KERNEL_FILE
 while true
 do
-    echo "====date:" >> /mnt/sda3/log/log.kernel
-    date >> /mnt/sda3/log/log.kernel
-    echo "====uptime:" >> /mnt/sda3/log/log.kernel
-    uptime >> /mnt/sda3/log/log.kernel
-    dmesg -c >> /mnt/sda3/log/log.kernel
+    echo "====date:" >> $LOG_KERNEL_FILE
+    date >> $LOG_KERNEL_FILE
+    echo "====uptime:" >> $LOG_KERNEL_FILE
+    uptime >> $LOG_KERNEL_FILE
+    dmesg -c >> $LOG_KERNEL_FILE
     
-    echo "====date:" >> /mnt/sda3/log/log.sys
-    date >> /mnt/sda3/log/log.sys
-    echo "====uptime:" >> /mnt/sda3/log/log.sys
-    uptime >> /mnt/sda3/log/log.sys
-    echo "====top -bn1:" >> /mnt/sda3/log/log.sys
-    top -bn1 >> /mnt/sda3/log/log.sys
+    echo "====date:" >> $LOG_SYS_FILE
+    date >> $LOG_SYS_FILE
+    echo "====uptime:" >> $LOG_SYS_FILE
+    uptime >> $LOG_SYS_FILE
+    echo "====top -bn1:" >> $LOG_SYS_FILE
+    top -bn1 >> $LOG_SYS_FILE
     
-    sleep 3600
+    sleep $TIME_SLEEP
+    now=$(date +%Y%m%d-%s)
+    
+    # 分割文件
+    sys_file_size=$(ls -l $LOG_SYS_FILE | awk '{print $5}')
+    if [ $sys_file_size -ge $MAX_FILE_SIZE ]
+    then
+        mv $LOG_SYS_FILE $LOG_SYS_FILE.bak.$now
+    fi
+    
+    kernel_file_size=$(ls -l $LOG_KERNEL_FILE | awk '{print $5}')
+    if [ $kernel_file_size -ge $MAX_FILE_SIZE ]
+    then
+        mv $LOG_KERNEL_FILE $LOG_KERNEL_FILE.bak.$now
+    fi
 done
 ~~~
 
