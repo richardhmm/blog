@@ -18,16 +18,16 @@ tags: [openwrt log logread shell]
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-if [ -x /mnt/sda3/log/autoGenLog.sh ] 
+if [ -x /mnt/log/autoGenLog.sh ] 
 then
-    /mnt/sda3/log/autoGenLog.sh &
+    /mnt/log/autoGenLog.sh &
 fi
 
 exit 0
 ~~~
 
 #### 2.2 实现脚本 ####
-/mnt/sda3/log/autoGenLog.sh
+/mnt/log/autoGenLog.sh
 
 ~~~
 #!/bin/sh
