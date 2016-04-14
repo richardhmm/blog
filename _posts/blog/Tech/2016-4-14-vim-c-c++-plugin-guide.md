@@ -10,6 +10,7 @@ tags: [vim plugin guide]
   学习linux下像source insight一样快速高效地阅读和编写c/c++源码, 同时速度和效率更高.
 
 ### 2. 使用langsim的现成vim配置 ###
+
 #### 2.1 下载安装 ####
 
 ~~~
