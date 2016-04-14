@@ -65,6 +65,7 @@ cp -rf vim-ide-master/.vim* ~
         * F9         exapnd tab to space or not
 
 ### 3. 使用ruchee vimrc的现成vim配置 ###
+
 #### 3.1 下载安装 ####
 
 1. `sudo apt-get install vim-gtk exuberant-ctags` [其他非 Debian 系的 Linux 请使用其自己的包管理器进行安装]
