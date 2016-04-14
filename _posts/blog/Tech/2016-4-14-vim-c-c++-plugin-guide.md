@@ -66,11 +66,17 @@ cp -rf vim-ide-master/.vim* ~
 
 ### 3. 使用ruchee vimrc的现成vim配置 ###
 #### 3.1 下载安装 ####
+
 1. `sudo apt-get install vim-gtk exuberant-ctags` [其他非 Debian 系的 Linux 请使用其自己的包管理器进行安装]
+
 2. 删除个人主目录下的 .vim 文件夹和 .vimrc 文件，如果没有则不需要执行删除动作 [使用命令 `rm -rf ~/.vim ~/.vimrc`，请注意备份]
+
 3. 使用 Git 下载本项目，然后将本项目的子目录拷贝到个人主目录下，取代已删文件的位置，然后将 vimfiles、_vimrc 改名为 .vim、.vimrc [命令为 `git clone https://github.com/ruchee/vimrc.git`、`mv ~/vimrc/vimfiles ~/.vim`、`mv ~/vimrc/_vimrc ~/.vimrc`]（也可以点击本页面的 Download ZIP 按钮下载）
+
 4. 可上 `https://github.com/ruchee/backup/blob/master/download/MONACO.TTF?raw=true` 下载 Monaco 字体，下载后使用命令 `mv MONACO.TTF ~/.fonts` 将其丢到 `~/.fonts` 目录即可
+
 5. 使用任意文本编辑器打开 .vimrc，将名字、邮箱、网址等全部替换为你自己的信息，如遇路径不同也全部替换为你本机的实际路径
+
 6. 如此这般就配置好了，尽情享受编码的乐趣吧，使用说明全部集中在 .vimrc 文件的头部，配置的后半部分全是各插件的具体配置项，初学无需理会
 
 ### 参考  ###
