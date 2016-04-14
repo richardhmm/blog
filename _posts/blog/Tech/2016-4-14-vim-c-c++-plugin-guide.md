@@ -9,7 +9,7 @@ tags: [vim plugin guide]
 ### 1. 目标  ###
   学习linux下像source insight一样快速高效地阅读和编写c/c++源码, 同时速度和效率更高.
 
-### 2. 使用langsim vim-ide的现成vim配置 ###
+### 2. 使用langsim的现成vim配置 ###
 #### 2.1 下载安装 ####
 
 ~~~
@@ -64,7 +64,7 @@ cp -rf vim-ide-master/.vim* ~
     * expand tab to space or not
         * F9         exapnd tab to space or not
 
-### 3. 使用ruchee vimrc的现成vim配置 ###
+### 3. 使用ruchee的现成vim配置 ###
 
 #### 3.1 下载安装 ####
 
