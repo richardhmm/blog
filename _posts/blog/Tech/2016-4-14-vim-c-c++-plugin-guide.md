@@ -29,9 +29,11 @@ source insight常用功能:
 3 F4打开最近阅读的源码(居下部).
 4 F5创建或更新ctags和cscope.
 5 Ctrl-o返回上次位置.
-6 :cs find s wrod查找工程内变量或函数.
-7 :cs find t word查找工程内文本.
+6 :cs find s wrod查找工程内变量或函数. 其快捷键为",ss": 查找光标下的变量或函数.
+7 :cs find t word查找工程内文本. 其快捷键为",st": 查找光标下的文本.
+7.1 :cs find f word查找工程内文件. 其快捷键为",sf": 查找光标下的文件.
 8 Ctrl-]跳转到工程内变量或函数的定义处.
+8.1 ctrl+t：返回上一个查找的地方.
 9 移动操作
 gg         将光标定位到文件第一行起始位置。
 G          将光标定位到文件最后一行起始位置。
@@ -53,6 +55,17 @@ CTRL＋v：按块选择。非常强大，只在很少的编辑器中才有这样
 复制选定块到缓冲区，用y；复制整行，用yy
 剪切选定块到缓冲区，用d；剪切整行用dd
 粘贴缓冲区中的内容，用p
+
+12 vimgrep
+vimgrep /匹配模式/[g][j] 要搜索的文件/范围 
+g：表示是否把每一行的多个匹配结果都加入
+j：表示是否搜索完后定位到第一个匹配位置
+
+vimgrep /pattern/ %           在当前打开文件中查找
+vimgrep /pattern/ *             在当前目录下查找所有
+vimgrep /pattern/ **            在当前目录及子目录下查找所有
+vimgrep /pattern/ *.c          查找当前目录下所有.c文件
+vimgrep /pattern/ **/*         只查找子目录
 ~~~
 
 ### 2. 使用langsim的现成vim配置 ###
