@@ -41,29 +41,29 @@ tags: [openwrt wifi startup mac80211]
 3 服务停止 /etc/init.d/network(stop() -- /sbin/wifi down)
 
 /sbin/wifi reload_legacy
-		->/lib/function.sh(include)
-			->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
-			包含shell文件中的函数待后续调用)
-		->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
-		section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
-		指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
-		并进行config_cb回调.)
-		->/sbin/wifi(wifi_reload_legacy)
-			->/sbin/wifi(_wifi_updown "disable" "$1")
-			->/sbin/wifi(scan_wifi)
-			->/sbin/wifi(_wifi_updown "enable" "$1")
+	->/lib/function.sh(include)
+		->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
+		包含shell文件中的函数待后续调用)
+	->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
+	section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
+	指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
+	并进行config_cb回调.)
+	->/sbin/wifi(wifi_reload_legacy)
+		->/sbin/wifi(_wifi_updown "disable" "$1")
+		->/sbin/wifi(scan_wifi)
+		->/sbin/wifi(_wifi_updown "enable" "$1")
 
 /sbin/wifi down
-		->/lib/function.sh(include)
-			->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
-			包含shell文件中的函数待后续调用)
-		->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
-		section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
-		指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
-		并进行config_cb回调.)
-		->/sbin/wifi(wifi_updown "disable" "$2")
-			->/sbin/wifi(ubus_wifi_cmd "$cmd" "$2")
-			->/sbin/wifi(_wifi_updown "$@")
+	->/lib/function.sh(include)
+		->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
+		包含shell文件中的函数待后续调用)
+	->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
+	section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
+	指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
+	并进行config_cb回调.)
+	->/sbin/wifi(wifi_updown "disable" "$2")
+		->/sbin/wifi(ubus_wifi_cmd "$cmd" "$2")
+		->/sbin/wifi(_wifi_updown "$@")
 ~~~
 
 ### 参考  ###
