@@ -17,18 +17,17 @@ tags: [openwrt wifi startup mac80211]
 
 ~~~
 执行流程分析:
-/etc/init.d/boot(/sbin/wifi detect > /tmp/wireless.tmp)
-	->/sbin/wifi(include/scan_wifi/wifi_detect)
-		->/lib/function.sh(include)
-			->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
-			包含shell文件中的函数待后续调用)
-		->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
-		section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
-		指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
-		并进行config_cb回调.)
-		->/sbin/wifi(wifi_detect--eval方法调用detect_mac80211函数)
-			->/lib/wifi/mac80211.sh(detect_mac80211, 自动生成wireless
-			配置文件)
+0 /etc/init.d/boot(/sbin/wifi detect > /tmp/wireless.tmp)
+1 /sbin/wifi(include/scan_wifi/wifi_detect)
+1.1 /lib/function.sh(include)
+1.1.1 /lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
+    包含shell文件中的函数待后续调用)
+1.2 /sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
+    section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
+    指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
+    并进行config_cb回调.)
+1.3 /sbin/wifi(wifi_detect--eval方法调用detect_mac80211函数)
+1.3.1 /lib/wifi/mac80211.sh(detect_mac80211, 自动生成wireless配置文件)
 ~~~
 
 #### 2.2 network脚本  ####
@@ -40,30 +39,30 @@ tags: [openwrt wifi startup mac80211]
 2 重新加载 /etc/init.d/network(reload_service() -- /sbin/wifi reload_legacy)
 3 服务停止 /etc/init.d/network(stop() -- /sbin/wifi down)
 
-/sbin/wifi reload_legacy
-	->/lib/function.sh(include)
-		->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
+0 /sbin/wifi reload_legacy
+	1 /lib/function.sh(include)
+		1.1 /lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
 		包含shell文件中的函数待后续调用)
-	->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
+	2 /sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
 	section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
 	指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
 	并进行config_cb回调.)
-	->/sbin/wifi(wifi_reload_legacy)
-		->/sbin/wifi(_wifi_updown "disable" "$1")
-		->/sbin/wifi(scan_wifi)
-		->/sbin/wifi(_wifi_updown "enable" "$1")
+	3 /sbin/wifi(wifi_reload_legacy)
+		3.1 /sbin/wifi(_wifi_updown "disable" "$1")
+		3.2 /sbin/wifi(scan_wifi)
+		3.3 /sbin/wifi(_wifi_updown "enable" "$1")
 
-/sbin/wifi down
-	->/lib/function.sh(include)
-		->/lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
-		包含shell文件中的函数待后续调用)
-	->/sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
-	section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
-	指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
-	并进行config_cb回调.)
-	->/sbin/wifi(wifi_updown "disable" "$2")
-		->/sbin/wifi(ubus_wifi_cmd "$cmd" "$2")
-		->/sbin/wifi(_wifi_updown "$@")
+0 /sbin/wifi down
+1 /lib/function.sh(include)
+1.1 /lib/wifi/mac80211.sh(获取全局变量DRIVERS值为"mac80211", 
+包含shell文件中的函数待后续调用)
+2 /sbin/wifi(scan_wifi--config_cb, 其中config_cb为config_load的
+section回调函数, 在此其作用是对wifi-device/wifi-iface这2个section
+指明一种特别的get和set方法; scan_wifi--config_load, 完成配置加载
+并进行config_cb回调.)
+3 /sbin/wifi(wifi_updown "disable" "$2")
+3.1 /sbin/wifi(ubus_wifi_cmd "$cmd" "$2")
+3.2 /sbin/wifi(_wifi_updown "$@")
 ~~~
 
 ### 参考  ###
