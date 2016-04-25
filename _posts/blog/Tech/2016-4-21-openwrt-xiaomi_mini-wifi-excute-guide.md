@@ -71,5 +71,5 @@ tags: [openwrt wifi startup mac80211]
 
 ### 参考  ###
 * <a href="http://blog.csdn.net/hui523hui523hui523/article/details/38493725">openwrt下wifi设置详细过程  </a>
-
+* <a href="https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-rootfs.tar.gz">openwrt-ar71xx-generic-rootfs.tar.gz</a>
 
