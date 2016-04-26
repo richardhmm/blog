@@ -34,6 +34,7 @@ source insight常用功能:
 7.1 :cs find f word查找工程内文件. 其快捷键为",sf": 查找光标下的文件.
 8 Ctrl-]跳转到工程内变量或函数的定义处.
 8.1 ctrl+t：返回上一个查找的地方.
+
 9 移动操作
 gg         将光标定位到文件第一行起始位置。
 G          将光标定位到文件最后一行起始位置。
@@ -66,6 +67,9 @@ vimgrep /pattern/ *             在当前目录下查找所有
 vimgrep /pattern/ **            在当前目录及子目录下查找所有
 vimgrep /pattern/ *.c          查找当前目录下所有.c文件
 vimgrep /pattern/ **/*         只查找子目录
+
+13 全局搜索快捷键
+F6 从**/*.c **/*.h **/*.cpp **/*.sh **/*.lua文件中对当前光标下的word进行全局搜索.
 ~~~
 
 ### 2. 使用langsim的现成vim配置 ###

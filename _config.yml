@@ -6,7 +6,7 @@ kramdown:
 permalink: /:categories/:title.html
 url: 
 lsi: false
-pygments: true
+rouge: true
 safe: true
 auto: false 
 
