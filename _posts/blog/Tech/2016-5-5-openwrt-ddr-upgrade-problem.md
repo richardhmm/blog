@@ -20,10 +20,12 @@ Location:
   
 ### 3. 分析  ###
 CONFIG_VMSPLIT is used to set the physical address of the RAM, so you have to use the "right" setting. That might be a kernel "bug" that could be fixed.
+
 <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=142852">raspberrypi forums</a>
 
 
 <a href="https://github.com/raspberrypi/linux/issues/1394">raspberrypi github issues</a>
+
 ~~~
 With a 3G/1G split, the kernel virtual addresses can only cover 768MB (lowmem) because address space is needed for other areas such as the 240MB vmalloc area:
 
