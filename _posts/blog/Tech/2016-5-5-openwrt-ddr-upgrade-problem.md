@@ -16,7 +16,7 @@ tags: [openwrt ddr problem]
 Location:  
   │     -> Kernel Features              
   │       -> Memory split (<choice> [=y]) 
-  ~~~
+~~~
   
 ### 3. 分析  ###
 CONFIG_VMSPLIT is used to set the physical address of the RAM, so you have to use the "right" setting. That might be a kernel "bug" that could be fixed.
