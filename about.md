@@ -24,3 +24,4 @@ title: "关于"
 * 娃控
 * <a href="http://blog.csdn.net/share_happy_1984">我的CSDN博客</a>
 * <a href="http://www.cnblogs.com/IDoIUnderstand">我的博客园博客</a>
+* <a href="http://richardhmm.coding.me/blog/">coding博客</a>
